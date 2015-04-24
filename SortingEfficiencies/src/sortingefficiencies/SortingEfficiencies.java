@@ -19,7 +19,7 @@ public class SortingEfficiencies {
     public static void main(String[] args) {
         int amount;
         long time;
-        List<Integer> numbers=new ArrayList();
+        List<Integer> numbers = new ArrayList();
         amount = Integer.parseInt(JOptionPane.showInputDialog("How many random numbers do you want to generate."));
         int nums[] = new int[amount];
         System.out.print("The unsorted list is: ");//output the unsorted list
@@ -27,10 +27,9 @@ public class SortingEfficiencies {
             nums[i] = (int) (Math.random() * 1001);//generate random numbers
             System.out.print(nums[i] + ", ");
         }
-        for (int i =0;i<nums.length;i++){
-        numbers.add(nums[i]);
-    }
- 
+        for (int i = 0; i < nums.length; i++) {
+            numbers.add(nums[i]);
+        }
 
         //execute different sorting algorithims 
         time = System.currentTimeMillis();
@@ -40,15 +39,14 @@ public class SortingEfficiencies {
         for (int i = 0; i < amount; i++) {
             System.out.print(nums[i] + ", ");
         }
-                System.out.println("\nIt took " + time + " miliseconds\n"+comp+" comparisons\n"+shift+" varible switches (when 1 varible is set equal to something else)\nand "+loop+" iterations.");
-for (int i =0;i<nums.length;i++){
-        nums[i]=numbers.get(i);
-    }
-         
-        
-        comp=0;  //reset varibles and get thecurrent time
-        shift=0; 
-        loop=0;
+        System.out.println("\nIt took " + time + " miliseconds\n" + comp + " comparisons\n" + shift + " varible switches (when 1 varible is set equal to something else)\nand " + loop + " iterations.");
+        for (int i = 0; i < nums.length; i++) {
+            nums[i] = numbers.get(i);
+        }
+
+        comp = 0;  //reset varibles and get thecurrent time
+        shift = 0;
+        loop = 0;
         time = System.currentTimeMillis();
 
         bubbleSort(nums);
@@ -57,14 +55,14 @@ for (int i =0;i<nums.length;i++){
         for (int i = 0; i < amount; i++) {
             System.out.print(nums[i] + ", ");
         }//output the info used to compare the sorting methods
-                System.out.println("\nIt took " + time + " miliseconds\n"+comp+" comparisons\n"+shift+" varible switches (when 1 varible is set equal to something else)\nand "+loop+" iterations.");
-for (int i =0;i<nums.length;i++){
-        nums[i]=numbers.get(i);
-    }
-        
-        comp=0;
-        shift=0; 
-        loop=0;
+        System.out.println("\nIt took " + time + " miliseconds\n" + comp + " comparisons\n" + shift + " varible switches (when 1 varible is set equal to something else)\nand " + loop + " iterations.");
+        for (int i = 0; i < nums.length; i++) {
+            nums[i] = numbers.get(i);
+        }
+
+        comp = 0;
+        shift = 0;
+        loop = 0;
         time = System.currentTimeMillis();
 
         insertionSort(nums);
@@ -73,14 +71,14 @@ for (int i =0;i<nums.length;i++){
         for (int i = 0; i < amount; i++) {
             System.out.print(nums[i] + ", ");
         }
-                System.out.println("\nIt took " + time + " miliseconds\n"+comp+" comparisons\n"+shift+" varible switches (when 1 varible is set equal to something else)\nand "+loop+" iterations.");
-for (int i =0;i<nums.length;i++){
-        nums[i]=numbers.get(i);
-    }
-        
-        comp=0; 
-        shift=0; 
-        loop=0;
+        System.out.println("\nIt took " + time + " miliseconds\n" + comp + " comparisons\n" + shift + " varible switches (when 1 varible is set equal to something else)\nand " + loop + " iterations.");
+        for (int i = 0; i < nums.length; i++) {
+            nums[i] = numbers.get(i);
+        }
+
+        comp = 0;
+        shift = 0;
+        loop = 0;
 
         time = System.currentTimeMillis();
 
@@ -90,7 +88,7 @@ for (int i =0;i<nums.length;i++){
         for (int i = 0; i < amount; i++) {
             System.out.print(nums[i] + ", ");
         }
-                System.out.println("\nIt took " + time + " miliseconds\n"+comp+" comparisons\n"+shift+" varible switches (when 1 varible is set equal to something else)\nand "+loop+" iterations.");
+        System.out.println("\nIt took " + time + " miliseconds\n" + comp + " comparisons\n" + shift + " varible switches (when 1 varible is set equal to something else)\nand " + loop + " iterations.");
     }
 //method that switches the place of 2 numbers in an int array
 
@@ -98,7 +96,7 @@ for (int i =0;i<nums.length;i++){
         int temp = nums[first];
         nums[first] = nums[second];
         nums[second] = temp;
-        shift=shift+3;
+        shift = shift + 3;
 
     }
 //method that calls switchPlaces if a smaller number is found before a larger one
@@ -137,7 +135,7 @@ for (int i =0;i<nums.length;i++){
             }
             comp++;
             if (check == false) {
-                
+
                 break;
             }
         }
@@ -154,7 +152,7 @@ for (int i =0;i<nums.length;i++){
             shift++;
             num = nums[i];//stored number
             shift++;
-            
+
             while (index > 0 && nums[index - 1] > num) {//if the index is before
 //0 and the number that comes before tat index is great then the current one, move that number to the left 
                 comp++;
@@ -164,7 +162,7 @@ for (int i =0;i<nums.length;i++){
                 index--;
             }
             nums[index] = num;
-             shift++;//place the stored number in the correct spot
+            shift++;//place the stored number in the correct spot
         }
 
     }
@@ -173,7 +171,7 @@ for (int i =0;i<nums.length;i++){
         loop++;
         comp++;
         if (start < end) {//continue if the section is greater than 1
-            
+
             int numb = split(nums, start, end);
             shift++;//find the place of a number
             quickSort(nums, start, numb - 1);//redo this with the number whoes spot was found
