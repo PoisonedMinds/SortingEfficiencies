@@ -9,11 +9,12 @@ import javax.swing.*;
  * @author Steven Biro
  * @teacher Mr. J. Carron
  * @date 16-Apr-2015 10:32:46 AM
- * @purpose The purpose of this program is to
+ * @purpose The purpose of this program is to compare different sorting
+ * algorithms and find the most efficient
  */
 public class SortingEfficiencies {
 
-    public static long shift = 0, loop = 0, comp = 0;
+    public static long shift = 0, loop = 0, comp = 0;//keep track of data
 
     public static void main(String[] args) {
         int amount;
@@ -45,17 +46,17 @@ for (int i =0;i<nums.length;i++){
     }
          
         
-        comp=0;  
+        comp=0;  //reset varibles and get thecurrent time
         shift=0; 
         loop=0;
         time = System.currentTimeMillis();
 
         bubbleSort(nums);
-        time = System.currentTimeMillis() - time;
+        time = System.currentTimeMillis() - time;//get the time it took to sort
         System.out.print("\nThe list sorted with bubble sort is: ");//output the sorted list
         for (int i = 0; i < amount; i++) {
             System.out.print(nums[i] + ", ");
-        }
+        }//output the info used to compare the sorting methods
                 System.out.println("\nIt took " + time + " miliseconds\n"+comp+" comparisons\n"+shift+" varible switches (when 1 varible is set equal to something else)\nand "+loop+" iterations.");
 for (int i =0;i<nums.length;i++){
         nums[i]=numbers.get(i);
